@@ -1,1 +1,1 @@
-this is a flutter project, i am trying to recreate something similar to an app that used Swiftui
+a twitter account challenged us to create something similar to an app in swiftUI
