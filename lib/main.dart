@@ -33,10 +33,13 @@ class _DemoState extends State<Demo> {
     });
   }
   bool isSwitched = false;
+  ThemeData _dark = ThemeData(brightness: Brightness.dark, primaryColor: Colors.white);
+  ThemeData _light = ThemeData(brightness: Brightness.light, primaryColor: Colors.black);
   DateTime dateTime = DateTime(3000, 2, 1, 10, 20);
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: isSwitched ? _dark : _light,
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Center(
@@ -52,7 +55,7 @@ class _DemoState extends State<Demo> {
                       children: [
                         Row(
                           children: [
-                            Text('on or off, you choose', style: TextStyle(fontWeight: FontWeight.bold)),
+                            Text('on off you choose', style: TextStyle(fontWeight: FontWeight.bold)),
                             Spacer(),
                             CupertinoSwitch(
                               value: isSwitched,
@@ -101,18 +104,19 @@ class _DemoState extends State<Demo> {
               Card(
                   child: Container(
                     child: Column(
+
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('hello World!', style: TextStyle(fontWeight: FontWeight.bold),),
+                        Text('hello World', style: TextStyle(fontWeight: FontWeight.bold),),
                         Divider(color: Colors.black, thickness: 1,),
-                        Text('hello World!', style: TextStyle(fontWeight: FontWeight.bold),),
+                        Text('hello World', style: TextStyle(fontWeight: FontWeight.bold),),
                         Divider(color: Colors.black, thickness: 1,),
-                        Text('hello World!', style: TextStyle(fontWeight: FontWeight.bold),),
+                        Text('hello World', style: TextStyle(fontWeight: FontWeight.bold),),
                         Divider(color: Colors.black, thickness: 1,),
-                        Text('hello World!', style: TextStyle(fontWeight: FontWeight.bold),),
+                        Text('hello World', style: TextStyle(fontWeight: FontWeight.bold),),
                       ],
                     ),
-                  )
+                  ),
               )
             ],
           ),
@@ -156,6 +160,7 @@ class _DatePickerExampleState extends State<DatePickerExample> {
   @override
   Widget build(BuildContext context) {
     return CupertinoButton(
+
       // Display a CupertinoDatePicker in date picker mode.
       onPressed: () => _showDialog(
         CupertinoDatePicker(
@@ -173,12 +178,10 @@ class _DatePickerExampleState extends State<DatePickerExample> {
       // In this example, the date is formatted manually. You can
       // use the intl package to format the value based on the
       // user's locale settings.
-      child: Text(
-        '${date.month}-${date.day}-${date.year}',
-        style: const TextStyle(
-          fontSize: 22.0,
-        ),
-      ),
+      child: Container(
+        color: Colors.white,
+        child: Text('${date.month}- ${date.year}- ${date.day}'),
+      )
     );
 
   }
