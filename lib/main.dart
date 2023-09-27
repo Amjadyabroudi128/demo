@@ -52,7 +52,7 @@ class _DemoState extends State<Demo> {
                       children: [
                         Row(
                           children: [
-                            Text('on off you choose', style: TextStyle(fontWeight: FontWeight.bold)),
+                            Text('on or off, you choose', style: TextStyle(fontWeight: FontWeight.bold)),
                             Spacer(),
                             CupertinoSwitch(
                               value: isSwitched,
