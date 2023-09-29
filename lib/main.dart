@@ -1,7 +1,10 @@
-import 'dart:math';
+
+import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:image_picker/image_picker.dart';
 
 void main() {
   runApp( Demo());
@@ -14,6 +17,35 @@ class Demo extends StatefulWidget {
 }
 
 class _DemoState extends State<Demo> {
+  File? image;
+
+  Future pickImage() async {
+    try {
+      final image = await ImagePicker().pickImage(source: ImageSource.gallery);
+
+      if(image == null) return;
+
+      final imageTemp = File(image.path);
+
+      setState(() => this.image = imageTemp);
+    } on PlatformException catch(e) {
+      print('Failed to pick image: $e');
+    }
+  }
+
+  Future pickImageC() async {
+    try {
+      final image = await ImagePicker().pickImage(source: ImageSource.camera);
+
+      if(image == null) return;
+
+      final imageTemp = File(image.path);
+
+      setState(() => this.image = imageTemp);
+    } on PlatformException catch(e) {
+      print('Failed to pick image: $e');
+    }
+  }
   int _counter = 0;
   void _incrementCounter() {
     setState(() {
@@ -36,6 +68,8 @@ class _DemoState extends State<Demo> {
   ThemeData _dark = ThemeData(brightness: Brightness.dark, primaryColor: Colors.white);
   ThemeData _light = ThemeData(brightness: Brightness.light, primaryColor: Colors.black);
   DateTime dateTime = DateTime(3000, 2, 1, 10, 20);
+
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -89,6 +123,27 @@ class _DemoState extends State<Demo> {
                             Text('Date'),
                            Spacer(),
                            DatePickerExample(),
+                          ],
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            TextButton.icon(
+                              icon: Icon(Icons.photo),
+                              label: Text('image from Gallery'),
+                              onPressed: (){
+                                pickImage();
+                              },
+                            ),
+                            TextButton.icon(
+                              icon: Icon(Icons.camera),
+                              label: Text('image from Camera', style: TextStyle(
+                                color: Colors.black
+                              ),),
+                              onPressed: (){
+                                pickImageC();
+                              },
+                            ),
                           ],
                         )
                       ],
