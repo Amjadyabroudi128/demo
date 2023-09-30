@@ -89,8 +89,9 @@ class _DemoState extends State<Demo> {
                       children: [
                         Row(
                           children: [
-                            Text('on off you choose', style: TextStyle(fontWeight: FontWeight.bold)),
+                            Text('on or off, you choose', style: TextStyle(fontWeight: FontWeight.bold)),
                             Spacer(),
+                            // this is a dark light them toggle switch
                             CupertinoSwitch(
                               value: isSwitched,
                               onChanged: (bool value){
@@ -126,24 +127,35 @@ class _DemoState extends State<Demo> {
                           ],
                         ),
                         Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            TextButton.icon(
-                              icon: Icon(Icons.photo),
-                              label: Text('image from Gallery'),
-                              onPressed: (){
-                                pickImage();
-                              },
+
+                            Row(
+                              children: [
+                                Text('pick image from gallery'),
+                                TextButton.icon(
+                                  icon: Icon(Icons.photo),
+                                  label: Text('image from Gallery'),
+                                  onPressed: (){
+                                    pickImage();
+                                  },
+                                ),
+                              ],
                             ),
-                            TextButton.icon(
-                              icon: Icon(Icons.camera),
-                              label: Text('image from Camera', style: TextStyle(
-                                color: Colors.black
-                              ),),
-                              onPressed: (){
-                                pickImageC();
-                              },
-                            ),
+                            Row(
+                              children: [
+                                Text('Pick image form camera'),
+                                TextButton.icon(
+                                  icon: Icon(Icons.camera),
+                                  label: Text('image from Camera', style: TextStyle(
+                                    color: Colors.black
+                                  ),),
+                                  onPressed: (){
+                                    pickImageC();
+                                  },
+                                ),
+                              ],
+                            )
+
                           ],
                         )
                       ],
@@ -162,13 +174,34 @@ class _DemoState extends State<Demo> {
 
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('hello World', style: TextStyle(fontWeight: FontWeight.bold),),
+                        SelectableText('hello World', style: TextStyle(fontWeight: FontWeight.bold, ),
+                        ),
                         Divider(color: Colors.black, thickness: 1,),
-                        Text('hello World', style: TextStyle(fontWeight: FontWeight.bold),),
+                        Text('hello, World!', style: TextStyle(fontWeight: FontWeight.bold),),
                         Divider(color: Colors.black, thickness: 1,),
-                        Text('hello World', style: TextStyle(fontWeight: FontWeight.bold),),
+                        Text('hello, World!', style: TextStyle(fontWeight: FontWeight.bold),),
                         Divider(color: Colors.black, thickness: 1,),
-                        Text('hello World', style: TextStyle(fontWeight: FontWeight.bold),),
+                        Text('hello, World!', style: TextStyle(fontWeight: FontWeight.bold),),
+                        Divider(color: Colors.black, thickness: 1,),
+                        SelectableText.rich(
+                          TextSpan(
+                            text: "this is ",     style: DefaultTextStyle.of(context).style,
+                            children: [
+                              TextSpan(
+                                text: "ALL " , style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                              )
+                              ),
+                              TextSpan(
+                                text:  "Selectable ",
+                                style: TextStyle(
+                                  height: 3.0,
+                                )
+                              ),
+                            ],
+                          ),
+                        ),
+
                       ],
                     ),
                   ),
@@ -236,7 +269,7 @@ class _DatePickerExampleState extends State<DatePickerExample> {
       child: Container(
         color: Colors.white,
         child: Text('${date.month}- ${date.year}- ${date.day}'),
-      )
+      ),
     );
 
   }
