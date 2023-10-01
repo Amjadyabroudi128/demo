@@ -175,6 +175,7 @@ class _DemoState extends State<Demo> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         SelectableText('hello World', style: TextStyle(fontWeight: FontWeight.bold, ),
+                          // this is a selecatble text, you can select it in the app and copy it
                         ),
                         Divider(color: Colors.black, thickness: 1,),
                         Text('hello, World!', style: TextStyle(fontWeight: FontWeight.bold),),
@@ -183,6 +184,7 @@ class _DemoState extends State<Demo> {
                         Divider(color: Colors.black, thickness: 1,),
                         Text('hello, World!', style: TextStyle(fontWeight: FontWeight.bold),),
                         Divider(color: Colors.black, thickness: 1,),
+                        // this text is a selectable text, but you can have different styles in it
                         SelectableText.rich(
                           TextSpan(
                             text: "this is ",     style: DefaultTextStyle.of(context).style,
@@ -255,7 +257,6 @@ class _DatePickerExampleState extends State<DatePickerExample> {
           initialDateTime: date,
           mode: CupertinoDatePickerMode.date,
           use24hFormat: true,
-          // this is a test to see if i can commit this change to the remote repo
           showDayOfWeek: true,
           // This is called when the user changes the date .
           onDateTimeChanged: (DateTime newDate) {
