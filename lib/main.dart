@@ -257,7 +257,7 @@ class _DatePickerExampleState extends State<DatePickerExample> {
           use24hFormat: true,
           // this is a test to see if i can commit this change to the remote repo
           showDayOfWeek: true,
-          // This is called when the user changes the datesss .
+          // This is called when the user changes the date .
           onDateTimeChanged: (DateTime newDate) {
             setState(() => date = newDate);
           },
