@@ -1,16 +1,4 @@
-# demo
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+i have tried to do a challenge that a swiftui person on twitter did, here is how mine looked vs his 
+i have added more things to it to practice my layout such as image and date picker
+![Screenshot 2023-09-27 124402](https://github.com/Amjadyabroudi128/demo/assets/61939508/6fc3f915-e0ff-4b8b-b080-7aa8dc851861), 
+![Screenshot 2023-10-01 002538](https://github.com/Amjadyabroudi128/demo/assets/61939508/eaf475a7-7fe5-4e5d-8372-a12b11f150db)
