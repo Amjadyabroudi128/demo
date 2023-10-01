@@ -184,7 +184,8 @@ class _DemoState extends State<Demo> {
                         Divider(color: Colors.black, thickness: 1,),
                         Text('hello, World!', style: TextStyle(fontWeight: FontWeight.bold),),
                         Divider(color: Colors.black, thickness: 1,),
-                        // this text is a selectable text, but you can have different styles in it, like bold and other things too 
+                        // this type of selectable text is rich which means it has different types of texts in the same selectable widget
+                        //for example it can be bold and other things
                         SelectableText.rich(
                           TextSpan(
                             text: "this is ",     style: DefaultTextStyle.of(context).style,
